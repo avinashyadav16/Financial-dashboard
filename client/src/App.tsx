@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Box } from "@mui/material";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
@@ -26,6 +27,14 @@ function App() {
       </BrowserRouter>
     </div>
   );
+=======
+
+function App() {
+  return (
+      <div className="app"></div>
+ 
+  )
+>>>>>>> 8654489bf5532f9746e644033926a444d5229400
 }
 
 export default App;
