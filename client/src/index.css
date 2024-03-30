@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 >>>>>>> 8654489bf5532f9746e644033926a444d5229400
+=======
+>>>>>>> Stashed changes
 
 html,
 body,
@@ -11,7 +14,10 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Inter", sans-serif;
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
   background-color: #1f2026;
 }
 
@@ -29,6 +35,7 @@ body,
 
 ::-webkit-scrollbar-track:hover {
   background: #2a2b2f;
+<<<<<<< Updated upstream
 }
 =======
   background-color: #3c53d3;
@@ -36,3 +43,6 @@ body,
 
 
 >>>>>>> 8654489bf5532f9746e644033926a444d5229400
+=======
+}
+>>>>>>> Stashed changes
