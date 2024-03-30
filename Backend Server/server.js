@@ -9,10 +9,10 @@ import morgan from "morgan";
 import kpiRoutes from "./routes/kpi.js";
 import productRoutes from "./routes/product.js";
 import transactionRoutes from "./routes/transaction.js";
-// import KPI from "./models/KPI.js";
-// import Product from "./models/Product.js";
-// import Transaction from "./models/Transaction.js";
-// import { kpis, products, transactions } from "./data/data.js";
+import KPI from "./models/KPI.js";
+import Product from "./models/Product.js";
+import Transaction from "./models/Transaction.js";
+import { kpis, products, transactions } from "./data/data.js";
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -45,23 +45,41 @@ dotenv.config({
 const URL = process.env.MONGO_URL;
 const PORT = process.env.PORT || 9000;
 
-const startServer = () => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
+const startServer = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL); // Using process.env.MONGO_URL instead of URL directly
+        console.log("Server Started And Database is connected.");
+
         /* ADD DATA ONE TIME ONLY OR AS NEEDED */
+
         // await mongoose.connection.db.dropDatabase();
+        // console.log("Database is cleared.");
+
         // KPI.insertMany(kpis);
+        // console.log("Data added to the database");
+
         // Product.insertMany(products);
+        // console.log("Data added to the database");
+
         // Transaction.insertMany(transactions);
-    }).on('error', error => {
+        // console.log("Data added to the database");
+
+        app.listen(process.env.PORT, () => { // Using process.env.PORT instead of PORT directly
+            console.log(`Server is running on port ${process.env.PORT}`);
+        }).on('error', error => {
+            console.error('Error starting server:', error);
+        });
+    } catch (error) {
         console.error('Error starting server:', error);
-    });
+    }
 };
+
+
 
 const connectToDatabase = async () => {
     try {
         await mongoose.connect(URL, {
-            // Add this option if you're using a version of the MongoDB Node.js driver that requires it.
+
         });
         console.log("Database is connected.");
     } catch (error) {
