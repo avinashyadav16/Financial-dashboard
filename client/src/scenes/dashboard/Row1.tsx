@@ -1,7 +1,7 @@
 import BoxHeader from "@/components/BoxHeader";
 import DashboardBox from "@/components/DashboardBox";
 import { useGetKpisQuery } from "@/state/api";
-import { useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import {
   ResponsiveContainer,
@@ -62,7 +62,7 @@ const Row1 = () => {
 
   return (
     <>
-      <DashboardBox gridArea="a">
+      <DashboardBox gridArea="a" theme={useTheme()}>
         <BoxHeader
           title="Revenue and Expenses"
           subtitle="top line represents revenue, bottom line represents expenses"
@@ -137,7 +137,8 @@ const Row1 = () => {
           </AreaChart>
         </ResponsiveContainer>
       </DashboardBox>
-      <DashboardBox gridArea="b">
+
+      <DashboardBox gridArea="b" theme={useTheme()}>
         <BoxHeader
           title="Profit and Revenue"
           subtitle="top line represents revenue, bottom line represents expenses"
@@ -196,7 +197,8 @@ const Row1 = () => {
           </LineChart>
         </ResponsiveContainer>
       </DashboardBox>
-      <DashboardBox gridArea="c">
+
+      <DashboardBox gridArea="c" theme={useTheme()}>
         <BoxHeader
           title="Revenue Month by Month"
           subtitle="graph representing the revenue month by month"
